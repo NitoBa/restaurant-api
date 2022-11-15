@@ -7,6 +7,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id String @id @default(uuid())
+model Category {
+  id       String @id @default(uuid())
+  name     String @unique
+  iconPath String
+
+  @@map("categories")
 }

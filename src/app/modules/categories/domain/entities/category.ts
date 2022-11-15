@@ -1,5 +1,7 @@
 export class Category {
-  id: string
-  name: string
-  iconPath: string
+  constructor(
+    readonly id: string,
+    readonly name: string,
+    readonly iconPath: string,
+  ) {}
 }
