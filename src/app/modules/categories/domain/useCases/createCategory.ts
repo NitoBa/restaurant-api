@@ -1,3 +1,4 @@
+import { MissingArgumentsError } from '../errors/missingArguments'
 import { ICategoryRepository } from '../repositories/ICategoryRepository'
 
 type CreateCategoryData = {
@@ -10,7 +11,7 @@ export class CreateCategory {
 
   async execute({ name, iconPath }: CreateCategoryData) {
     if (!name || !iconPath) {
-      throw new Error('Name and iconPath is required fields!')
+      throw new MissingArgumentsError('Name and iconPath is required fields!')
     }
 
     await this.repository.create(name, iconPath)

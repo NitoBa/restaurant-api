@@ -1,8 +1,6 @@
 import { Router } from 'express'
-import { uploadImage } from '../middlewares/uploadImage'
+import { categoryRouter } from './category.routes'
 
 export const router = Router()
 
-router.post('/', uploadImage, (req, res) => {
-  res.json({ ok: true })
-})
+router.use('/category', categoryRouter)
